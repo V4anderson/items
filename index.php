@@ -20,21 +20,6 @@
             <!--<div id="DivDescricao">Descrição</div>-->
         </div><hr>
     </div>
-    <div id="DivRetangular">
-        <div id="DivImagem">
-            <div id="DivTitulo">X - Bacon</div>
-            <div id="DivPreco">R$2,50</div><button>COMPRAR</button>
-            <!--<div id="DivDescricao">Descrição</div>-->
-        </div><hr>
-    </div>
-    <div id="DivRetangular">
-        <div id="DivImagem">
-            <div id="DivTitulo">X - Bacon</div>
-            <div id="DivPreco">R$2,50</div><button>COMPRAR</button>
-            <!--<div id="DivDescricao">Descrição</div>-->
-        </div><hr>
-    </div>
-</div>
 
 
 <script>
