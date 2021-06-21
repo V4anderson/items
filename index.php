@@ -30,8 +30,7 @@ var objeto = {}
 fetch(URL_TO_FETCH, { 
   method: 'get',
   headers: { 
-        'Content-type': "application/json; charset=UTF-8",
-        "Authorization": "Token 9a97310957764540181f11f2ffb4d2f1b75ba9db"
+        'Content-type': "application/json; charset=UTF-8"
       }, 
 })
 .then(function(response) { 
