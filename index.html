@@ -38,26 +38,39 @@
 
 
 <script>
-function carregar(){
-//VERBO GET
-var URL_TO_FETCH = 'https://api-rest25.herokuapp.com/items/1/'; 
+var c = 0
+var URL_TO_FETCH = 'https://spreadsheets.google.com/feeds/cells/1HwYDFUXg95vvdPuc-MZ3_8HCc7U0ajlhTyc2m2XVFWw/od6/public/basic?alt=json'
 var objeto = {}
+var h5 = document.createElement('h5')
+var lista = document.getElementById('DivInterna')
+var cc = 0
+
+var atualizacao = () =>{
+  
 fetch(URL_TO_FETCH, { 
-  method: 'get',
-  headers: { 
-        'Content-type': "application/json; charset=UTF-8",
-        "Authorization": "Token 9a97310957764540181f11f2ffb4d2f1b75ba9db"
-      }, 
+method: 'get' // 
 })
 .then(function(response) { 
-  response.text()
-  .then(function(result){ 
-    objeto = JSON.parse(result) 
-    console.log(objeto)
-  })
+response.text()
+.then(function(result){ 
+objeto = JSON.parse(result) 
+//console.log(objeto)
+while(c < objeto['feed']['entry'].length) {
+//console.log(objeto['feed']['entry'][c]['content']['$t'])
+
+h5 = document.createElement('h5')
+h5.innerHTML = objeto['feed']['entry'][c]['content']['$t']
+h5.className="blue-text header col s12 "
+lista.appendChild(h5).innerHTML = '<div id="DivRetangular"><div id="DivImagem"><div id="DivTitulo">X - Bacon</div><div id="DivPreco">R$2,50</div><button>COMPRAR</button><!--<div id="DivDescricao">Descrição</div>--></div><hr></div></div>'
+    
+
+c+=1  
+}
+})
 })
 .catch(function(err) { console.error(err); });
 }
+setInterval(atualizacao,1000)
 </script>
 </body>
 </html>
